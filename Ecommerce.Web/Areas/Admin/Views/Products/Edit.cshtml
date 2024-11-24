@@ -1,0 +1,65 @@
+﻿@model EditProductVM
+
+@{
+    ViewData["Title"] = "Product";
+    ViewData["CardTitle"] = "Edit";
+}
+
+<div class="text-center mb-4 mt-4">
+    <h5 class="text-primary">
+        <i class="bi bi-pencil-square"></i>
+        Edit Employee
+    </h5>
+</div>
+
+<form asp-action="Edit" enctype="multipart/form-data" class="p-4 shadow-sm bg-white rounded">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name" class="form-label mt-4"></label>
+                <input type="text" class="form-control border border-secondary" asp-for="Name" placeholder="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="form-label mt-3"></label>
+                <input class="form-control border border-secondary" asp-for="Price" placeholder="Price"/>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="form-label mt-4"></label>
+                <select class="form-control border border-secondary" asp-for="CategoryId" asp-items="Model.CategoriesList">
+                    <option value="">Select a Category</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="Description" class="form-label mt-3"></label>
+                <textarea asp-for="Description" class="form-control" placeholder="Enter Product Description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4 w-50"><i class="bi bi-pen-fill"></i>  update</button>
+        </div>
+        <div class="col-md-6 d-flex flex-column align-items-center pt-4 overflow-hidden">
+            <div class="image-preview-container" style="width: 500px; height: 400px; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img class="cover-preview" alt="Image" src="@($"{FileSettings.ImagesPath}/Products/{Model.CurrentImage}")" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Image" class="form-label mt-4"></label>
+                <input type="file" class="form-control border border-secondary" asp-for="Image"
+                       data-rule-extension="@FileSettings.AllowedExtensions.Replace(".", string.Empty)"
+                       data-msg-extension="Not allowed extension"
+                       data-rule-filesize="@FileSettings.MaxFileSizeInBytes"
+                       data-msg-filesize="Maximum allowed size is @FileSettings.MaxFileSizeInMB MB">
+                <small class="form-text text-muted">Only @FileSettings.AllowedExtensions files are allowed with max size @(FileSettings.MaxFileSizeInMB)MB.</small>
+                <span asp-validation-for="Image" class="text-danger d-block"></span>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/filesize-validator.js" asp-append-version="true"></script>
+    <script src="~/js/image-preview.js"></script>
+    <script src="~/lib/select2/js/select2.min.js"></script>
+}

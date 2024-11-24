@@ -1,0 +1,45 @@
+﻿@model EditCategoryVM
+
+@{
+    ViewData["Title"] = "Category";
+    ViewData["CardTitle"] = "Edit";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form asp-action="Edit" class="needs-validation" novalidate>
+                    <!-- Category Name Input -->
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="form-label fw-bold"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Enter Category Name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <!-- Category Description Input -->
+                    <div class="form-group mb-4">
+                        <label asp-for="Description" class="form-label fw-bold"></label>
+                        <textarea asp-for="Description" class="form-control" placeholder="Enter Category Description" rows="4"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <!-- Save Button -->
+                    <div class="form-group d-flex justify-content-between">
+                        <button type="submit" class="btn btn-warning btn-lg">
+                            <i class="bi bi-pen"></i> Update
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary btn-lg">
+                            <i class="bi bi-arrow-left"></i>
+                            Back to List
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

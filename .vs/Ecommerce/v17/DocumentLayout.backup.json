@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\views\\shared\\_customer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_customer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEAD16BD-0D14-4A30-9550-24FDA64FC6F4}|Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEAD16BD-0D14-4A30-9550-24FDA64FC6F4}|Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj|solutionrelative:ecommerce.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Migrations\\20241124153937_Ecommerce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Ecommerce.DataAccess\\Migrations\\20241124153937_Ecommerce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-24T15:43:39.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Dashboard.cshtml",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-24T15:43:38.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-24T15:43:36.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Customer.cshtml",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-24T15:43:35.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20241124153937_Ecommerce.cs",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Migrations\\20241124153937_Ecommerce.cs",
+              "RelativeDocumentMoniker": "Ecommerce.DataAccess\\Migrations\\20241124153937_Ecommerce.cs",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Migrations\\20241124153937_Ecommerce.cs",
+              "RelativeToolTip": "Ecommerce.DataAccess\\Migrations\\20241124153937_Ecommerce.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T15:39:37.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Ecommerce.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Ecommerce.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T11:31:57.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Program.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Program.cs",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Program.cs",
+              "RelativeToolTip": "Ecommerce.Web\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T11:25:53.599Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

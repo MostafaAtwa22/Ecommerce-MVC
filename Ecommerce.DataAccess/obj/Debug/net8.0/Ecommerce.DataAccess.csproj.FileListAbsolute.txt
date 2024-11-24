@@ -1,0 +1,17 @@
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\bin\Debug\net8.0\Ecommerce.DataAccess.deps.json
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\bin\Debug\net8.0\Ecommerce.DataAccess.runtimeconfig.json
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\bin\Debug\net8.0\Ecommerce.DataAccess.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\bin\Debug\net8.0\Ecommerce.DataAccess.pdb
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\bin\Debug\net8.0\Ecommerce.Entities.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\bin\Debug\net8.0\Ecommerce.Entities.pdb
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.csproj.AssemblyReference.cache
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.AssemblyInfoInputs.cache
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.AssemblyInfo.cs
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.csproj.CoreCompileInputs.cache
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerc.06B1919B.Up2Date
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\refint\Ecommerce.DataAccess.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.pdb
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\Ecommerce.DataAccess.genruntimeconfig.cache
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.DataAccess\obj\Debug\net8.0\ref\Ecommerce.DataAccess.dll

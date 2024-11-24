@@ -1,0 +1,55 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = Model.Name;
+    ViewData["CardTitle"] = "Deatils";
+}
+
+<div class="d-flex justify-content-center container mt-5">
+    <div class="card p-3 shadow-lg" style="width: 600px;">
+        <!-- Product Image Section -->
+        <div class="text-center">
+            <img src="@($"{FileSettings.ImagesPath}/Products/{Model.Image}")"
+                 class="img-fluid rounded mb-3"
+                 style="width: 400px;"
+                 alt="@Model.Name">
+        </div>
+
+        <!-- Product Name and Description -->
+        <div class="text-center">
+            <h4>@Model.Name</h4>
+            <h6 class="text-muted">@Model.Description</h6>
+        </div>
+
+        <!-- Product Stats -->
+        <div class="mt-3">
+            <div class="d-flex justify-content-between border-bottom pb-2">
+                <span class="fw-bold">Category</span>
+                <span>@Model.Category.Name</span>
+            </div>
+            <div class="d-flex justify-content-between border-bottom pb-2">
+                <span class="fw-bold">Price</span>
+                <span>$@Model.Price</span>
+            </div>
+        </div>
+
+        <!-- Total -->
+        <div class="d-flex justify-content-between fw-bold mt-3">
+            <span>Total</span>
+            <span>$@Model.Price</span>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-flex justify-content-between mt-4">
+            <!-- Back to List Button -->
+            <a href="@Url.Action("Index", "Products")" class="btn btn-secondary btn-sm">
+                <i class="bi bi-arrow-left-circle"></i> Back to List
+            </a>
+
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Products", new { id = Model.Id })" class="btn btn-warning btn-sm">
+                <i class="bi bi-pencil"></i> Edit
+            </a>
+        </div>
+    </div>
+</div>
