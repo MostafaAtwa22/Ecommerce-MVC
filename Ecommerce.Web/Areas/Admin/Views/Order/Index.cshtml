@@ -1,0 +1,52 @@
+﻿@model IEnumerable<OrderHeader>
+
+@{
+    ViewData["Title"] = "Orders Management";
+    ViewData["CardTitle"] = "View Orders";
+}
+
+<div class="container mt-4">
+    @if (Model == null || !Model.Any()) // Check if Model is null or empty
+    {
+        <div class="alert alert-warning mt-5 text-center">
+            <h4 class="alert-heading">No Orders!</h4>
+            <p>No orders have been added yet.</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive mt-3">
+            <table id="productTable" class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Order Status</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>@order.ApplicationUser.Name</td>
+                            <td>@order.ApplicationUser.PhoneNumber</td>
+                            <td>@order.ApplicationUser.Email</td>
+                            <td>@order.OrderStatus</td>
+                            <td>@order.TotalPrice</td>
+                            <td class="d-flex justify-content-center gap-2">
+                                <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@order.Id">
+                                    <i class="bi-eye"></i> Details
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

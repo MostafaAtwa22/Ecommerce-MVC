@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users Management";
+    ViewData["CardTitle"] = "Users";
+}
+
+<div class="container mt-4">
+    <div class="row align-items-center">
+        <div class="col-auto">
+            <a class="btn btn-secondary btn-lg" href="/Identity/Account/Register">
+                <i class="bi bi-plus-circle-dotted"></i>
+                Add User
+            </a>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning mt-5 text-center">
+            <h4 class="alert-heading">No Users!</h4>
+            <p>No Users have been added yet.</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive mt-3">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.Address</td>
+                            <td>@item.City</td>
+                            <td>
+                                <div class="d-flex justify-content-around">
+                                    @if (item.LockoutEnd is null | item.LockoutEnd < DateTime.Now)
+                                    {
+                                        <a asp-action="LockUnLock" asp-route-id="@item.Id" class="btn btn-success btn-sm w-md-auto">
+                                            <i class="bi-unlock-fill"></i> 
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="LockUnLock" asp-route-id="@item.Id" class="btn btn-warning btn-sm w-md-auto">
+                                            <i class="bi-lock-fill"></i> 
+                                        </a>
+                                    }
+                                    <a href="javascript:;" class="btn btn-danger btn-sm w-md-auto js-delete" data-id="@item.Id">
+                                        <i class="bi-trash"></i> 
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/user-index.js" asp-append-version="true"></script>
+}

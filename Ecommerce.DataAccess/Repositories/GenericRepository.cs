@@ -2,7 +2,7 @@
 
 namespace Ecommerce.DataAccess.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly ApplicationDbContext _context;
         private DbSet<T> _dbSet;
@@ -70,5 +70,8 @@ namespace Ecommerce.DataAccess.Repositories
 
         public void Delete(T model)
             => _dbSet.Remove(model);
+
+        public void RemoveRange(IEnumerable<T> entities)
+            => _dbSet.RemoveRange(entities);
     }
 }

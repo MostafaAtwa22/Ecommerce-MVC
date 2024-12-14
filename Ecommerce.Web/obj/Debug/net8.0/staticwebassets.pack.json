@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Images\\Products\\52bebe18-7723-470a-a561-b7928ca1d158.jpeg"
     },
     {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\f1f746b0-11c8-4cf3-8170-686046ab8aa9.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\f1f746b0-11c8-4cf3-8170-686046ab8aa9.jpeg"
+    },
+    {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\css\\adminlte.css",
       "PackagePath": "staticwebassets\\css\\adminlte.css"
     },
@@ -297,6 +301,10 @@
       "PackagePath": "staticwebassets\\js\\adminlte.min.js.map"
     },
     {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\js\\cart-delete.js",
+      "PackagePath": "staticwebassets\\js\\cart-delete.js"
+    },
+    {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\js\\category\\category-index.js",
       "PackagePath": "staticwebassets\\js\\category\\category-index.js"
     },
@@ -331,6 +339,10 @@
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\js\\user-index.js",
+      "PackagePath": "staticwebassets\\js\\user-index.js"
     },
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\lib\\bootstrap-icons\\font\\bootstrap-icons.css",
@@ -5871,6 +5883,18 @@
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\plugins\\uplot\\uPlot.min.css",
       "PackagePath": "staticwebassets\\plugins\\uplot\\uPlot.min.css"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\shoppingCart\\index.html",
+      "PackagePath": "staticwebassets\\shoppingCart\\index.html"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\shoppingCart\\style.css",
+      "PackagePath": "staticwebassets\\shoppingCart\\style.css"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\summary\\style.css",
+      "PackagePath": "staticwebassets\\summary\\style.css"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Ecommerce.Web.Microsoft.AspNetCore.StaticWebAssets.props",

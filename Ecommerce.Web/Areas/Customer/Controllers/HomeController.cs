@@ -1,5 +1,7 @@
 ﻿using Ecommerce.Entities.ViewModels.Customer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Ecommerce.Web.Areas.Customer.Controllers
 {
@@ -20,19 +22,46 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ShoppingCartVM>> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            var Product = await _unitOfWork.Products.Find(c => c.Id == id, new[] { "Category" });
+            var product = await _unitOfWork.Products.Find(c => c.Id == id, new[] { "Category" });
 
-            if (Product is null)
+            if (product is null)
                 return NotFound();
 
-            ShoppingCartVM model = new ShoppingCartVM
+            ShoppingCart model = new ShoppingCart
             {
-                Product = Product,
+                Product = product,
                 Count = 1
             };
-            return View(model); 
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Details(ShoppingCart model)
+        {
+            var claimIdentity = (ClaimsIdentity)User.Identity!;
+            var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            model.ApplicationUserId = claim?.Value!;
+
+            ShoppingCart? cart = await _unitOfWork.ShoppingCarts
+                .FindWithTrack(c => c.ApplicationUserId == claim.Value! && c.ProductId == model.ProductId);
+
+            if (cart is null)
+            {
+                model.Id = 0;
+                // Add to database
+                _unitOfWork.ShoppingCarts.Create(model);
+            }
+            else
+            {
+                _unitOfWork.ShoppingCarts.IncreaseCount(cart, model.Count);
+            }
+            await _unitOfWork.Complete();
+
+            return RedirectToAction("Index");
         }
     }
-}
+}       

@@ -1,5 +1,7 @@
+using Ecommerce.Utilities;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Stripe;
 
 namespace Ecommerce.Web
 {
@@ -11,6 +13,8 @@ namespace Ecommerce.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddRazorPages(); // Add this line for Razor Pages support
+
             var constr = builder.Configuration.GetConnectionString("constr")
                 ?? throw new InvalidOperationException("No Connection String");
 
@@ -19,8 +23,17 @@ namespace Ecommerce.Web
                 options.UseSqlServer(constr);
             });
 
-            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.Configure<StripeConfig>(builder.Configuration.GetSection("Stripe"));
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+                            {
+                                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromDays(1);
+                            })
+                            .AddDefaultTokenProviders()
+                            .AddDefaultUI()
+                            .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddSingleton<IEmailSender, EmailSender>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -33,9 +46,13 @@ namespace Ecommerce.Web
 
             app.UseRouting();
 
+            StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:Secretkey").Get<string>();
+
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.MapRazorPages(); // Ensure Razor Pages are mapped
 
             app.MapControllerRoute(
                 name: "default",

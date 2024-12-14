@@ -376,7 +376,6 @@ D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Mic
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\NuGet.Common.dll
@@ -395,11 +394,9 @@ D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Sys
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Composition.Runtime.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Composition.TypedParts.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Windows.Extensions.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\af\Humanizer.resources.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\ar\Humanizer.resources.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -513,10 +510,6 @@ D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\ru\
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Azure.Core.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Azure.Identity.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
@@ -564,10 +557,8 @@ D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Mic
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\System.ClientModel.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\SQLitePCLRaw.core.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -591,3 +582,9 @@ D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\run
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\obj\Debug\net8.0\Ecommerce.Web.sourcelink.json
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Ecommerce.Utilities.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Ecommerce.Utilities.pdb
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Stripe.net.dll
