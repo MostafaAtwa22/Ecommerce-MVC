@@ -130,8 +130,7 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
 
             var service = new SessionService();
             Session session = service.Create(options);
-            model.OrderHeader.SessionID = session.Id;
-            model.OrderHeader.PaymentIntentId = session.PaymentIntentId;
+			ShoppingCartVM.OrderHeader.SessionID = session.Id;
             await _unitOfWork.Complete();
 
             Response.Headers.Add("Location", session.Url);
@@ -145,11 +144,11 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
                 .FindWithTrack(u => u.Id == id);
             var service = new SessionService();
             Session session = service.Get(orderHeader!.SessionID);
-
             if (session.PaymentStatus.ToLower() == "paid")
             {
                 _unitOfWork.OrderHeaders.UpdateOrderStatus(id, SD.Approve, SD.Approve);
-                orderHeader.PaymentIntentId = session.PaymentIntentId;
+				ShoppingCartVM.OrderHeader.PaymentIntentId = session.PaymentIntentId;
+				orderHeader.PaymentIntentId = session.PaymentIntentId;
                 await _unitOfWork.Complete();
             }
             List<ShoppingCart> shoppingCarts = (List<ShoppingCart>)await _unitOfWork.ShoppingCarts

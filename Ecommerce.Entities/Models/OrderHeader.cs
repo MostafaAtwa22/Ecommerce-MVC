@@ -19,7 +19,9 @@ namespace Ecommerce.Entities.Models
 
         public string? PaymentStatus { get; set; }
 
-        public string? Carrier { get; set; }
+		public string? TrakcingNumber { get; set; }
+
+		public string? Carrier { get; set; }
 
         public DateTime PaymentDate { get; set; }
         

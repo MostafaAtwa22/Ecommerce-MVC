@@ -10,7 +10,7 @@
         public const string Approve = "Approve";
         public const string Proccessing = "Proccessing";
         public const string Cancelled = "Cancelled";
-        public const string Shipping = "Shipping";
+        public const string Shipped = "Shipped";
         public const string Refund = "Refund";
         public const string Rejected = "Rejected";
 

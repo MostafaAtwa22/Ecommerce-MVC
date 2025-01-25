@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Ecommerce.DataAccess.Repositories
 {
@@ -12,7 +13,7 @@ namespace Ecommerce.DataAccess.Repositories
             _context = context;
         }
 
-        public void UpdateOrderStatus(int id, string OrderStatus, string PaymentStatus)
+        public void UpdateOrderStatus(int id, string OrderStatus, string? PaymentStatus)
         {
             var order = _context.OrderHeaders
                 .FirstOrDefault(o => o.Id == id);
@@ -20,9 +21,10 @@ namespace Ecommerce.DataAccess.Repositories
             if (order is not null)
             {
                 order.OrderStatus = OrderStatus;
+                order.PaymentDate = DateTime.Now;
                 if (PaymentStatus is not null)
                     order.PaymentStatus = PaymentStatus;
             }
         }
-    }
-    }
+	}
+}
