@@ -1,41 +1,181 @@
-﻿@model IEnumerable<Product>
+﻿@using Ecommerce.Models.ViewModels
+@model HomeViewModel
 
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            @foreach (var product in Model)
-            {
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top"
-                             src="@(FileSettings.ImagesPath)/Products/@product.Image" alt="@product.Name"
-                             width="450" height="300" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">@product.Name</h5>
-                                <!-- Product price-->
-                                $@product.Price
+@foreach (var categoryGroup in Model.ProductsByCategory)
+{
+    <section class="py-5">
+        <div class="container">
+            <!-- Updated heading with a custom class for enhanced styling -->
+            <h2 class="category-title fw-bold text-start">
+                @categoryGroup.Key.Name
+            </h2>
+            <div class="scroll-container">
+                <button class="scroll-btn left" onclick="scrollContainerLeft(this)">❮</button>
+                <div class="scroll-wrapper">
+                    @foreach (var product in categoryGroup.Value)
+                    {
+                        <div class="card">
+                            <img class="card-img" src="@(FileSettings.ImagesPath)/Products/@product.Image" alt="@product.Name">
+                            <div class="card-body">
+                                <h5>@product.Name</h5>
+                                <div class="price">$@product.Price</div>
+                                <div class="text-warning">@product.Amount Product Remain</div>
+                                @if (product.Amount > 0)
+                                {
+                                    <div class="price text-success">+ In stock</div>
+                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Details", "Home", new { id = product.Id })">
+                                        View Details
+                                    </a>
+                                }
+                                else
+                                {
+                                    <div class="price text-danger">- Out of stock</div>
+                                    <button disabled class="btn btn-secondary mt-auto">
+                                        Out Of Stock
+                                    </button>
+                                }
                             </div>
                         </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <!-- View details button -->
-                                <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Details", "Home", new { id = product.Id })">
-                                    View Details
-                                </a>
-                            </div>
-                            <div class="text-center mt-2">
-                                <!-- Add to cart button -->
-                                <a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
-            }
+                <button class="scroll-btn right" onclick="scrollContainerRight(this)">❯</button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+}
+
+
+@section BannerProducts {
+    @if (Model.BannerProducts != null && Model.BannerProducts.Any())
+    {
+        <section id="banner-area" class="d-flex align-items-center justify-content-center" style="height: 80vh;">
+            <div class="owl-carousel owl-theme">
+                @foreach (var product in Model.BannerProducts)
+                {
+                    <div class="item">
+                        <img style="width:100%; height: 100%; object-fit:cover;" src="@FileSettings.ImagesPath/Products/@product.Image" alt="@product.Name">
+                    </div>
+                }
+            </div>
+        </section>
+    }
+}
+
+<style>
+    /* Enhanced style for the category heading */
+    .category-title {
+        font-size: 2.5rem; /* Larger font size for prominence */
+        color: #333; /* Dark color for better readability */
+        border-bottom: 3px solid #eee; /* A colored bottom border for a visual accent */
+        padding-bottom: 10px; /* Space between the text and the border */
+        margin-bottom: 30px; /* Additional space below the heading */
+        text-transform: uppercase; /* Optional: transforms the text to uppercase */
+        letter-spacing: 1px; /* Optional: increases the spacing between letters */
+    }
+
+    .scroll-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0;
+    }
+
+    .scroll-wrapper {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding: 10px;
+        scrollbar-width: none;
+    }
+
+        .scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+    /* Updated card styling */
+    .card {
+        min-width: 250px;
+        max-width: 250px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        height: 400px; /* Increased overall card height */
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    /* Adjust the image height */
+    .card-img {
+        width: 100%;
+        height: 200px; /* Increased image height */
+        object-fit: cover;
+    }
+
+    /* Make the card body take up the rest of the space */
+    .card-body {
+        padding: 15px;
+        text-align: center;
+        height: calc(100% - 200px); /* Subtracting image height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .price {
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    .scroll-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+        .scroll-btn:hover {
+            background: black;
+        }
+
+    .left {
+        left: 10px;
+    }
+
+    .right {
+        right: 10px;
+    }
+
+</style>
+
+<!-- Place this script at the end of your page -->
+<script>
+    const scrollAmount = 300; // Adjust as needed
+
+    function scrollContainerLeft(button) {
+        const container = button.closest('.scroll-container').querySelector('.scroll-wrapper');
+        console.log('Left button clicked. Container:', container);
+        if (container) {
+            container.scrollLeft -= scrollAmount;
+            console.log('New scrollLeft:', container.scrollLeft);
+        }
+    }
+
+    function scrollContainerRight(button) {
+        const container = button.closest('.scroll-container').querySelector('.scroll-wrapper');
+        if (container) {
+            container.scrollLeft += scrollAmount;
+        }
+    }
+</script>

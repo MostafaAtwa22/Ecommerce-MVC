@@ -2,15 +2,67 @@
   "Files": [
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Ecommerce.Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Ecommerce.Web.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Ecommerce.Web.9b7j4xbih2.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\03f8c5fd-f25d-4413-b045-f23f2d5eed5f.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\03f8c5fd-f25d-4413-b045-f23f2d5eed5f.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\074db4ff-f99c-4690-82f3-55b03055e277.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\074db4ff-f99c-4690-82f3-55b03055e277.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\0b30f28e-fdc6-42b4-84d5-ac0d053e962a.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\0b30f28e-fdc6-42b4-84d5-ac0d053e962a.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\2093b5d9-070e-42d1-ba85-69bae0c29b4a.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\2093b5d9-070e-42d1-ba85-69bae0c29b4a.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\26a0d8a7-fb6a-44e6-ae5e-0832a87d8768.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\26a0d8a7-fb6a-44e6-ae5e-0832a87d8768.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\37475232-971c-42db-bdf2-950917233105.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\37475232-971c-42db-bdf2-950917233105.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\3f086bb4-7c78-498a-ba1e-bdae5847cfff.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Products\\3f086bb4-7c78-498a-ba1e-bdae5847cfff.jpeg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\425c48d2-cdc6-487e-ad47-57cdd26916f9.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\425c48d2-cdc6-487e-ad47-57cdd26916f9.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\51bd112d-cb87-4ca6-baaf-5f75e4c578c8.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\51bd112d-cb87-4ca6-baaf-5f75e4c578c8.jpg"
     },
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\52bebe18-7723-470a-a561-b7928ca1d158.jpeg",
       "PackagePath": "staticwebassets\\Images\\Products\\52bebe18-7723-470a-a561-b7928ca1d158.jpeg"
     },
     {
-      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\f1f746b0-11c8-4cf3-8170-686046ab8aa9.jpeg",
-      "PackagePath": "staticwebassets\\Images\\Products\\f1f746b0-11c8-4cf3-8170-686046ab8aa9.jpeg"
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\53142fa4-080e-4363-9b32-5b2821709fef.png",
+      "PackagePath": "staticwebassets\\Images\\Products\\53142fa4-080e-4363-9b32-5b2821709fef.png"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\b6964b2a-b6a3-4ec0-b1fb-fb931f0b007f.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\b6964b2a-b6a3-4ec0-b1fb-fb931f0b007f.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\d6005d47-b432-448d-9a0a-4689248ecd40.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\d6005d47-b432-448d-9a0a-4689248ecd40.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\e21d891c-6b10-4c36-8061-7ab3a0cdb5ec.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\e21d891c-6b10-4c36-8061-7ab3a0cdb5ec.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\Images\\Products\\eb2aa184-6038-46bd-b3f8-8cb88c37b95e.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\eb2aa184-6038-46bd-b3f8-8cb88c37b95e.jpg"
     },
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\css\\adminlte.css",
@@ -177,6 +229,10 @@
       "PackagePath": "staticwebassets\\img\\boxed-bg.png"
     },
     {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\confirm.jpg",
+      "PackagePath": "staticwebassets\\img\\confirm.jpg"
+    },
+    {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\credit\\american-express.png",
       "PackagePath": "staticwebassets\\img\\credit\\american-express.png"
     },
@@ -203,6 +259,14 @@
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\default-150x150.png",
       "PackagePath": "staticwebassets\\img\\default-150x150.png"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\ecom.jpg",
+      "PackagePath": "staticwebassets\\img\\ecom.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\ecommerce.jpg",
+      "PackagePath": "staticwebassets\\img\\ecommerce.jpg"
     },
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\icons.png",
@@ -243,6 +307,10 @@
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\prod-5.jpg",
       "PackagePath": "staticwebassets\\img\\prod-5.jpg"
+    },
+    {
+      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\th.jpg",
+      "PackagePath": "staticwebassets\\img\\th.jpg"
     },
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\img\\user1-128x128.jpg",
@@ -299,10 +367,6 @@
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\js\\adminlte.min.js.map",
       "PackagePath": "staticwebassets\\js\\adminlte.min.js.map"
-    },
-    {
-      "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\js\\cart-delete.js",
-      "PackagePath": "staticwebassets\\js\\cart-delete.js"
     },
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\js\\category\\category-index.js",
@@ -5895,6 +5959,10 @@
     {
       "Id": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\wwwroot\\summary\\style.css",
       "PackagePath": "staticwebassets\\summary\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Ecommerce.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Ecommerce.Web.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -39,8 +39,7 @@ namespace Ecommerce.DataAccess.Repositories
 
         }
 
-        public async Task<IEnumerable<T?>> FindAllWithTrack(Expression<Func<T, bool>> criteria
-            , string[]? includes = null!)
+        public async Task<IEnumerable<T?>> FindAllWithTrack(Expression<Func<T, bool>>? criteria = null, string[]? includes = null)
         {
             IQueryable<T> query =_dbSet;
 
@@ -48,7 +47,10 @@ namespace Ecommerce.DataAccess.Repositories
                 foreach (var include in includes)
                     query = query.Include(include);
 
-            return await query.Where(criteria).ToListAsync();
+            if (criteria is not null)
+                query = query.Where(criteria);
+
+            return await query.ToListAsync();
         }
 
         public async Task<T?> FindWithTrack(Expression<Func<T, bool>> criteria, string[]? includes = null!)

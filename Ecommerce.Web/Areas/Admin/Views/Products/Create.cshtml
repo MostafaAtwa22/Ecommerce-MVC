@@ -26,6 +26,11 @@
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Quantity" class="form-label mt-3"></label>
+                <input class="form-control border border-secondary" asp-for="Quantity" placeholder="Quantity" value="" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="CategoryId" class="form-label mt-4"></label>
                 <select class="form-control border border-secondary" asp-for="CategoryId" asp-items="Model.CategoriesList">
                     <option value="">Select a Category</option>

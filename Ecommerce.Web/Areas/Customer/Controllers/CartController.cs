@@ -1,4 +1,5 @@
-﻿using Ecommerce.Entities.ViewModels.Customer;
+﻿using Ecommerce.DataAccess.Migrations;
+using Ecommerce.Entities.ViewModels.Customer;
 using Ecommerce.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Stripe.Checkout;
@@ -130,7 +131,7 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
 
             var service = new SessionService();
             Session session = service.Create(options);
-			ShoppingCartVM.OrderHeader.SessionID = session.Id;
+            model.OrderHeader.SessionID = session.Id; // Corrected line
             await _unitOfWork.Complete();
 
             Response.Headers.Add("Location", session.Url);
@@ -142,20 +143,37 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
         {
             OrderHeader? orderHeader = await _unitOfWork.OrderHeaders
                 .FindWithTrack(u => u.Id == id);
+
             var service = new SessionService();
-            Session session = service.Get(orderHeader!.SessionID);
+            Session session = service.Get(orderHeader.SessionID);
+
             if (session.PaymentStatus.ToLower() == "paid")
             {
                 _unitOfWork.OrderHeaders.UpdateOrderStatus(id, SD.Approve, SD.Approve);
-				ShoppingCartVM.OrderHeader.PaymentIntentId = session.PaymentIntentId;
-				orderHeader.PaymentIntentId = session.PaymentIntentId;
+                orderHeader.PaymentIntentId = session.PaymentIntentId; // Corrected line
                 await _unitOfWork.Complete();
             }
+
             List<ShoppingCart> shoppingCarts = (List<ShoppingCart>)await _unitOfWork.ShoppingCarts
                 .GetAll(u => u.ApplicationUserId == orderHeader.ApplicationUserId);
-            //HttpContext.Session.Clear();
+
+            var products = await _unitOfWork.Products.FindAllWithTrack();
+            foreach (var product in products)
+            {
+                foreach (var order in shoppingCarts)
+                {
+                    if (order.ProductId == product!.Id)
+                    {
+                        product.Amount -= order.Count;
+                    }
+                }
+            }
+
+            HttpContext.Session.Clear();
             _unitOfWork.ShoppingCarts.RemoveRange(shoppingCarts);
             await _unitOfWork.Complete();
+
+            HttpContext.Session.SetInt32(SD.SessionKey, 0);
 
             return View(id);
         }
@@ -187,15 +205,19 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
             if (cart.Count <= 1)
             { 
                 _unitOfWork.ShoppingCarts.Delete(cart);
-                await _unitOfWork.Complete();
-                return RedirectToAction("Index", "Home");
+                var count = await _unitOfWork.ShoppingCarts
+                    .GetAll(x => x.ApplicationUserId == cart.ApplicationUserId);
+
+                HttpContext.Session.SetInt32(SD.SessionKey, count.ToList().Count() - 1);
             }
-            _unitOfWork.ShoppingCarts.DecreaseCount(cart, 1);
+            else
+                _unitOfWork.ShoppingCarts.DecreaseCount(cart, 1);
+
             await _unitOfWork.Complete();
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpDelete]
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             var cart = await _unitOfWork.ShoppingCarts
@@ -203,13 +225,18 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
 
             if (cart == null)
             {
-                return Json(new { success = false, message = "User not found." });
+                return NotFound();
             }
 
             _unitOfWork.ShoppingCarts.Delete(cart);
             await _unitOfWork.Complete();
 
-            return Json(new { success = true, message = "User deleted successfully." });
+            var count = await _unitOfWork.ShoppingCarts
+                   .GetAll(x => x.ApplicationUserId == cart.ApplicationUserId);
+
+            HttpContext.Session.SetInt32(SD.SessionKey, count.ToList().Count());
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

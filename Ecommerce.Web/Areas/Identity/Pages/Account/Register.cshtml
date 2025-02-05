@@ -5,109 +5,123 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <!-- Form Section -->
-        <div class="col-lg-6 col-md-8">
-            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="p-4 shadow rounded bg-white">
-                <h2 class="text-center mb-4">Create a New Account</h2>
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-10">
+                <!-- Adjust width -->
+                <div class="card shadow-lg d-flex flex-row overflow-hidden rounded-4">
+                    <!-- Unified container -->
+                    <div class="p-4 flex-fill" style="width: 50%;">
+                        <h3 class="text-primary mb-4">Sign Up</h3>
 
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="Name" />
-                    <label asp-for="Input.Name"><i class="bi bi-person"></i> Name</label>
-                    <span asp-validation-for="Input.Name" class="text-danger"></span>
-                </div>
+                        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="Name" />
+                                <label asp-for="Input.Name"><i class="bi bi-person"></i> Name</label>
+                                <span asp-validation-for="Input.Name" class="text-danger"></span>
+                            </div>
 
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email"><i class="bi bi-envelope"></i> Email</label>
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                                <label asp-for="Input.Email"><i class="bi bi-envelope"></i> Email</label>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
 
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Address" class="form-control" autocomplete="address" aria-required="true" placeholder="Address" />
-                    <label asp-for="Input.Address"><i class="bi bi-geo-alt"></i> Address</label>
-                    <span asp-validation-for="Input.Address" class="text-danger"></span>
-                </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Address" class="form-control" autocomplete="address" aria-required="true" placeholder="Address" />
+                                <label asp-for="Input.Address"><i class="bi bi-geo-alt"></i> Address</label>
+                                <span asp-validation-for="Input.Address" class="text-danger"></span>
+                            </div>
 
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.City" class="form-control" autocomplete="city" aria-required="true" placeholder="City" />
-                    <label asp-for="Input.City"><i class="bi bi-building"></i> City</label>
-                    <span asp-validation-for="Input.City" class="text-danger"></span>
-                </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.City" class="form-control" autocomplete="city" aria-required="true" placeholder="City" />
+                                <label asp-for="Input.City"><i class="bi bi-building"></i> City</label>
+                                <span asp-validation-for="Input.City" class="text-danger"></span>
+                            </div>
 
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="+20" aria-required="true" placeholder="Phone Number" />
-                    <label asp-for="Input.PhoneNumber"><i class="bi bi-building"></i> Phone Number</label>
-                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-                </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="+20" aria-required="true" placeholder="Phone Number" />
+                                <label asp-for="Input.PhoneNumber"><i class="bi bi-phone"></i> Phone Number</label>
+                                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                            </div>
 
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Password" />
-                    <label asp-for="Input.Password"><i class="bi bi-lock"></i> Password</label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Password" />
+                                <label asp-for="Input.Password"><i class="bi bi-lock"></i> Password</label>
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
 
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Confirm Password" />
-                    <label asp-for="Input.ConfirmPassword"><i class="bi bi-lock-fill"></i> Confirm Password</label>
-                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                </div>
-                @if (User.IsInRole(SD.AdminRole))
-                {
-                    <div class="form-floating mb-3">
-                        <select class="form-select" id="roleSelect" name="role">
-                            <option value="">Select a role</option>
-                            <option value="@SD.AdminRole">@SD.AdminRole</option>
-                            <option value="@SD.EditorRole">@SD.EditorRole</option>
-                            <option value="@SD.CustomerRole">@SD.CustomerRole</option>
-                        </select>
-                        <label for="roleSelect"><i class="bi bi-person-badge"></i> Role</label>
-                    </div>
-                }
-                @if(User.IsInRole(SD.AdminRole))
-                {
-                    <button id="registerSubmit" type="submit" class="btn btn-primary w-100">Add User</button>
-                }
-                else
-                {
-                    <button id="registerSubmit" type="submit" class="btn btn-primary w-100">Register</button>
-                }
-            </form>
-        </div>
+                            <div class="form-floating mb-3">
+                                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Confirm Password" />
+                                <label asp-for="Input.ConfirmPassword"><i class="bi bi-lock-fill"></i> Confirm Password</label>
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </div>
 
-        <!-- External Login Section -->
-        <div class="col-lg-6 col-md-8 mt-4">
-            <section class="p-4 shadow rounded bg-light">
-                <h3 class="text-center mb-4">Use Another Service</h3>
-                <hr />
-                @{
-                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                    {
-                        <p class="text-center text-muted">
-                            No external authentication services are configured. See this
-                            <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article</a> for setup details.
-                        </p>
-                    }
-                    else
-                    {
-                        <div class="d-flex flex-column align-items-center">
-                            @foreach (var provider in Model.ExternalLogins!)
+                            @if (User.IsInRole(SD.AdminRole))
                             {
-                                <button type="submit" class="btn btn-outline-primary w-75 my-2" name="provider" value="@provider.Name">
-                                    Continue with @provider.DisplayName
-                                </button>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="roleSelect" name="role">
+                                        <option value="">Select a role</option>
+                                        <option value="@SD.AdminRole">@SD.AdminRole</option>
+                                        <option value="@SD.EditorRole">@SD.EditorRole</option>
+                                        <option value="@SD.CustomerRole">@SD.CustomerRole</option>
+                                    </select>
+                                    <label for="roleSelect"><i class="bi bi-person-badge"></i> Role</label>
+                                </div>
                             }
-                        </div>
-                    }
-                }
-            </section>
+                            <div class="text-center mb-3">
+                                <p>Already have an account? <a href="/Identity/Account/Login" class="text-primary">Login</a></p>
+                            </div>
+
+                            <button id="registerSubmit" type="submit" class="btn btn-primary w-100">
+                                @(User.IsInRole(SD.AdminRole) ? "Add User" : "Register")
+                            </button>
+                        </form>
+                    </div>
+                    <div class="w-50">
+                        <img src="~/img/ecommerce.jpg" class="img-fluid h-100 w-100" alt="Welcome Image">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
+<style>
+    body {
+        background: linear-gradient(to right, #eef2f3, #8EC5FC); /* Background color to match login */
+    }
+    
+
+    .btn-warning {
+        background-color: #ff6600; /* Button color */
+        border-color: #ff6600;
+        color: #fff;
+    }
+
+    .text-primary {
+        color: #1a1a1a; /* Primary text color */
+    }
+
+    .card {
+        border-radius: 1rem; /* Apply rounded corners to the whole container */
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 0 1rem 1rem 0; /* Right rounded corners */
+    }
+
+    .rounded-end {
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem; /* Adjusting image radius */
+    }
+</style>

@@ -16,6 +16,11 @@ namespace Ecommerce.Entities.Models
         [MaxLength(3000)]
         public string Description { get; set; } = string.Empty;
 
+        public DateTime TimeCreation { get; set; } = DateTime.Now;
+
+        [Required]
+        public int Amount { get; set; }
+
         [Required]
         public decimal Price { get; set; }
 

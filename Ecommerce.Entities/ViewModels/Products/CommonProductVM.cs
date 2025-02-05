@@ -15,6 +15,9 @@ namespace Ecommerce.Entities.ViewModels.Products
         public decimal Price { get; set; }
 
         [Required]
+        public int Quantity { get; set; }
+
+        [Required]
         [Display(Name = "Categories")]
         public int CategoryId { get; set; }
 

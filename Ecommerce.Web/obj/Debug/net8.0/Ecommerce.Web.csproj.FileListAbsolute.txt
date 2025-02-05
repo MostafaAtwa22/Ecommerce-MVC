@@ -588,3 +588,9 @@ D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Eco
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Stripe.net.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\X.PagedList.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\bin\Debug\net8.0\Ecommerce.Web.staticwebassets.endpoints.json
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\obj\Debug\net8.0\staticwebassets\msbuild.Ecommerce.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

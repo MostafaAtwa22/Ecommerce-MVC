@@ -34,6 +34,10 @@ namespace Ecommerce.Web
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddSingleton<IEmailSender, EmailSender>();
+
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -51,6 +55,8 @@ namespace Ecommerce.Web
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapRazorPages(); // Ensure Razor Pages are mapped
 

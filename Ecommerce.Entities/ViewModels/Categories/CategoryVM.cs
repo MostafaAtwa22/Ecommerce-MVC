@@ -1,4 +1,6 @@
-﻿namespace Ecommerce.Entities.ViewModels.Categories
+﻿using Ecommerce.Entities.Models;
+
+namespace Ecommerce.Entities.ViewModels.Categories
 {
     public class CategoryVM
     {
@@ -9,5 +11,6 @@
         [Required]
         [MaxLength(3000)]
         public string Description { get; set; } = string.Empty;
+
     }
 }

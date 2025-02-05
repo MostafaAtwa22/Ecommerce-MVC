@@ -1,32 +1,279 @@
 ﻿@model ShoppingCart
 
 <form asp-action="Details" method="post">
-    <section class="py-5">
+    <section class="py-5 product-detail-section" style="margin-top:-120px;">
         <div class="container px-4 px-lg-5 my-5">
-            <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="row gx-4 gx-lg-5 align-items-center product-detail-card">
                 <input type="hidden" asp-for="ProductId" value="@Model.Product.Id" />
-                <input hidden asp-for="ApplicationUserId" />
+                <input type="hidden" asp-for="ApplicationUserId" />
+
                 <div class="col-md-6">
-                    <img class="card-img-top mb-5 mb-md-0" src="@(FileSettings.ImagesPath)/Products/@Model.Product.Image" 
-                    alt="@Model.Product.Name"
-                         width="600" height="700" />
+                    <!-- Responsive image with fixed dimensions -->
+                    <img class="img-fluid rounded product-img"
+                         src="@(FileSettings.ImagesPath)/Products/@Model.Product.Image"
+                         alt="@Model.Product.Name" />
                 </div>
+
                 <div class="col-md-6">
-                    <div class="small mb-1">@Model.Product.Category.Name</div>
+                    <!-- Category and product details -->
+                    <h3 class="mb-1 text-muted">@Model.Product.Category.Name</h3>
                     <h1 class="display-5 fw-bolder">@Model.Product.Name</h1>
                     <div class="fs-5 mb-5">
-                        <span>@Model.Product.Price</span>
+                        <span class="text-primary">$@Model.Product.Price</span>
                     </div>
                     <p class="lead">@Model.Product.Description</p>
-                    <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" asp-for="Count" style="max-width: 3rem" />
-                        <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
+                    <div class="text-warning mb-3">@Model.Product.Amount Product Remain</div>
+
+                    @if (Model.Product.Amount > 0)
+                    {
+                        <div class="text-success mb-2 in-stock-text">+ In stock</div>
+                        <div class="d-flex align-items-center">
+                            <input class="form-control text-center me-3 quantity-input"
+                                   id="inputQuantity"
+                                   asp-for="Count"
+                                   type="number"
+                                   min="1"
+                                   max="@Math.Min(Model.Product.Amount, 10)" />
+                            <span asp-validation-for="Count" class="text-danger"></span>
+                            <button class="btn btn-outline-dark add-to-cart-btn" type="submit">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-danger mb-2 out-of-stock-text">- Out of stock</div>
+                        <button disabled class="btn btn-secondary mt-auto out-of-stock-btn">
+                            Out Of Stock
                         </button>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
-    </section>  
+    </section>
 </form>
+
+
+<section class="py-5">
+    <div class="container">
+        <!-- Similar Products Section -->
+        <h2 class="category-title fw-bold text-start">
+            Similar Products
+        </h2>
+        <div class="scroll-container">
+            <button class="scroll-btn left" onclick="scrollContainerLeft(this)">❮</button>
+            <div class="scroll-wrapper">
+                @foreach (var product in ViewBag.ProductsByCategory)
+                {
+                    <div class="card">
+                        <img class="card-img" src="@(FileSettings.ImagesPath)/Products/@product.Image" alt="@product.Name">
+                        <div class="card-body">
+                            <h5>@product.Name</h5>
+                            <div class="price">$@product.Price</div>
+                            <div class="text-warning">@product.Amount Product Remain</div>
+                            @if (product.Amount > 0)
+                            {
+                                <div class="price text-success">+ In stock</div>
+                                <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Details", "Home", new { id = product.Id })">
+                                    View Details
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="price text-danger">- Out of stock</div>
+                                <button disabled class="btn btn-secondary mt-auto">
+                                    Out Of Stock
+                                </button>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <button class="scroll-btn right" onclick="scrollContainerRight(this)">❯</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Overall section adjustments */
+    .product-detail-section {
+        margin-top: -80px; /* Adjust as needed */
+    }
+
+    /* Card container styling */
+    .product-detail-card {
+        border: 2px solid #eee;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    /* Product image styling */
+    .product-img {
+        width: 600px; /* Fixed width */
+        height: 500px; /* Fixed height */
+        object-fit: cover; /* Ensures the image covers the container while preserving aspect ratio */
+        border-radius: 10px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: solid 1px #ccc;
+    }
+
+    /* Typography adjustments */
+    .display-5 {
+        color: #333;
+    }
+
+    .fs-5 {
+        color: #555;
+    }
+
+    .lead {
+        color: #666;
+    }
+
+    /* Button styling */
+    .btn-outline-dark {
+        border-color: #333;
+        color: #333;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+        .btn-outline-dark:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+        color: #fff;
+    }
+
+        .btn-secondary:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+    /* Stock text styling */
+    .in-stock-text {
+        font-size: 25px;
+    }
+
+    .out-of-stock-text {
+        font-size: 25px;
+    }
+
+    /* Quantity input adjustments */
+    .quantity-input {
+        max-width: 4rem;
+    }
+
+    .category-title {
+        font-size: 2.5rem; /* Larger font size for prominence */
+        color: #333; /* Dark color for better readability */
+        border-bottom: 3px solid #eee; /* A colored bottom border for a visual accent */
+        padding-bottom: 10px; /* Space between the text and the border */
+        margin-bottom: 30px; /* Additional space below the heading */
+        text-transform: uppercase; /* Optional: transforms the text to uppercase */
+        letter-spacing: 1px; /* Optional: increases the spacing between letters */
+    }
+
+    .scroll-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0;
+    }
+
+    .scroll-wrapper {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding: 10px;
+        scrollbar-width: none;
+    }
+
+        .scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+    /* Updated card styling for similar products */
+    .card {
+        min-width: 250px;
+        max-width: 250px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        height: 400px; /* Increased overall card height */
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    .card-img {
+        width: 100%;
+        height: 200px; /* Increased image height */
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 15px;
+        text-align: center;
+        height: calc(100% - 200px); /* Subtracting image height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .price {
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    .scroll-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+        .scroll-btn:hover {
+            background: black;
+        }
+
+    .left {
+        left: 10px;
+    }
+
+    .right {
+        right: 10px;
+    }
+</style>
+
+<script>
+    // Example scroll functions. Customize as needed.
+    function scrollContainerLeft(btn) {
+        // Find the nearest scroll-wrapper relative to the button and scroll left
+        var scrollWrapper = btn.parentElement.querySelector('.scroll-wrapper');
+        scrollWrapper.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+
+    function scrollContainerRight(btn) {
+        // Find the nearest scroll-wrapper relative to the button and scroll right
+        var scrollWrapper = btn.parentElement.querySelector('.scroll-wrapper');
+        scrollWrapper.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+</script>

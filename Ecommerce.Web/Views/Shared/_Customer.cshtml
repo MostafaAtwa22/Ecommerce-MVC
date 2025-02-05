@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Ecommerce.Utilities
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,14 +7,14 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Shop Tech</title>
-    <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="~/customer/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <style>
-        /* Sticky footer styles */
         html, body {
             height: 100%;
             margin: 0;
@@ -27,61 +28,112 @@
         #content {
             flex: 1;
         }
+
+        #banner-area .owl-carousel .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Use Bootstrap's vh-100 utility class */
+        #banner-area .owl-carousel .item {
+            height: 100vh; /* Take up the full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index:20; position:relative; border-bottom:solid 0.25px black; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#!">Shop Tech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="#">Shop Tech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Customer/Home/Index">Home</a>
                     </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole(SD.AdminRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Admin/Dashboard/Index">Dashboard</a>
+                            </li>
+                        }
+                        else if (User.IsInRole(SD.CustomerRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Customer/Cart/Index">My Orders</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/Identity/Account/Manage">My settings</a>
+                        </li>
+                    }
                 </ul>
                 <partial name="_LoginPartial" />
-                <form class="d-flex">
-                    <a class="btn btn-outline-dark" href="/Customer/Cart/index">
-                        <i class="bi-cart-fill me-1"></i>
-                        Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </a>
-                </form>
+                @if (User.Identity.IsAuthenticated && User.IsInRole(SD.CustomerRole))
+                {
+                    <form class="d-flex">
+                        <a href="/Customer/Cart/Index" class="btn btn-outline-dark">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            @await Component.InvokeAsync("ShoppingCart")
+                        </a>
+                    </form>
+                }
             </div>
         </div>
     </nav>
-    <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop homepage template</p>
-            </div>
-        </div>
+
+    <!-- Banner Section -->
+    <header>
+        @RenderSection("BannerProducts", required: false)
     </header>
-    <!-- Section-->
-    <div id="content">
+    <br />
+    <br />
+   <br />
+    <!-- Main Content Section -->
+    <div id="content" style="margin-top:20px;">
         @RenderBody()
     </div>
-    <!-- Footer-->
+
+    <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 1 },
+                    1000: { items: 1 }
+                }
+            });
+        });
+    </script>
+    <!-- jQuery (Required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="~/customer/js/scripts.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

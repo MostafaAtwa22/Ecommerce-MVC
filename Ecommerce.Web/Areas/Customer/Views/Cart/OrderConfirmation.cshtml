@@ -1,14 +1,92 @@
 ﻿@model int
+@{
+    Layout = "_CustomersOrder";
+}
 
-<div class="Container row pt-4">
-    <div class="col-12 text-center">
-        <h3>Thank You</h3>
-        <br />
-        <img src="~/img/confirm.jpg" width="400" height="400" />
+<div class="confirmation-container">
+    <div class="confirmation-card">
+        <h1 class="confirmation-title">🎉 Thank You!</h1>
+        <p class="confirmation-message">
+            Your Order Number <span class="order-number">@Model</span> has been successfully placed.
+        </p>
+        <div class="confirmation-image">
+            <img src="~/img/confirm.jpg" alt="Order Confirmed">
+        </div>
+        <a href="/Customer/Home" class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> Continue Shopping
+        </a>
     </div>
-    <div class="col-12 text-center">
-        <br />
-        <h2>Your Order Number @Model Has Been Successfully Placed</h2><br />
-    </div>
-
 </div>
+
+<style>
+    /* Page Styling */
+    .confirmation-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(to right, #eef2f3, #8EC5FC);
+    }
+
+    /* Card Styling */
+    .confirmation-card {
+        background: #fff;
+        padding: 40px;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+    }
+
+    .confirmation-title {
+        color: #28a745;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .confirmation-message {
+        font-size: 1.2rem;
+        color: #6c757d;
+        margin-bottom: 20px;
+    }
+
+    .order-number {
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    .confirmation-image img {
+        width: 250px;
+        height: auto;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .confirmation-message {
+        font-size: 1rem;
+    }
+
+    .confirmation-card {
+        padding: 20px;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+</style>

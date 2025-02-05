@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Entities.Settings;
 using Ecommerce.Entities.ViewModels.Products;
+using Stripe.V2;
 
 namespace Ecommerce.Web.Areas.Admin.Controllers
 {
@@ -82,13 +83,14 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
                 CategoryId = model.CategoryId,
                 Image = imageName,
                 Description = model.Description,
-                Price = model.Price
+                Price = model.Price,
+                Amount = model.Quantity
             };
 
             _unitOfWork.Products.Create(product);
             var effectedRows = await _unitOfWork.Complete();
             if (effectedRows > 0)
-                TempData["Create"] = "Data has been Created Succesfully";
+                TempData["Create"] = "Data has been Created Successfully";
 
             return RedirectToAction(nameof(Index));
         }
@@ -110,7 +112,8 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
                 Description = product.Description,
                 Price = product.Price,
                 CategoriesList = await _unitOfWork.Categories.GetSelectList(),
-                CurrentImage = product.Image
+                CurrentImage = product.Image,
+                Quantity = product.Amount
             };
             return View(productVM);
         }
@@ -138,7 +141,9 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
             product.CategoryId = model.CategoryId;
             product.Description = model.Description;
             product.Price = model.Price;
-            
+            product.Amount = model.Quantity;
+
+
             if (hasNewImage)
                 product.Image = await SaveImage(model.Image!);
 

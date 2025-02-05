@@ -1,6 +1,7 @@
-﻿using Ecommerce.Entities.ViewModels.Customer;
+﻿using Ecommerce.Entities.ViewModels;
+using Ecommerce.Models.ViewModels;
+using Ecommerce.Utilities;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace Ecommerce.Web.Areas.Customer.Controllers
@@ -15,10 +16,27 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ActionResult<IEnumerable<Product>>> Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            var products = await _unitOfWork.Products.GetAll();
-            return View(products);
+            var products = await _unitOfWork.Products.GetAll(includes: new[] { "Category" });
+
+            var productsByCategory = products
+                .GroupBy(p => new { p.CategoryId, p.Category.Name })
+                .ToDictionary(
+                    g => new EditCategoryVM { Id = g.Key.CategoryId, Name = g.Key.Name },
+                    g => g.ToList()
+                );
+
+            var latestProducts = products.OrderByDescending(p => p.TimeCreation).Take(5).ToList();
+
+            var model = new HomeViewModel
+            {
+                ProductsByCategory = productsByCategory,
+                BannerProducts = latestProducts
+            };
+
+            return View(model);
         }
 
         [HttpGet]
@@ -29,12 +47,18 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
             if (product is null)
                 return NotFound();
 
-            ShoppingCart model = new ShoppingCart
+            ShoppingCart cart = new ShoppingCart
             {
                 Product = product,
                 Count = 1
             };
-            return View(model);
+
+            var ProductsByCategory = await _unitOfWork.Products
+                .GetAll(p => p.CategoryId == cart.Product.CategoryId && p.Id != id);
+
+            ViewBag.ProductsByCategory = ProductsByCategory.ToList();
+
+            return View(cart);
         }
 
         [HttpPost]
@@ -54,14 +78,21 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
                 model.Id = 0;
                 // Add to database
                 _unitOfWork.ShoppingCarts.Create(model);
+                await _unitOfWork.Complete();
+                var UserCart = await _unitOfWork.ShoppingCarts.GetAll(x => x.ApplicationUserId == claim.Value);
+                HttpContext.Session.SetInt32(SD.SessionKey,  UserCart.ToList().Count());
             }
             else
             {
                 _unitOfWork.ShoppingCarts.IncreaseCount(cart, model.Count);
+                await _unitOfWork.Complete();
             }
-            await _unitOfWork.Complete();
 
             return RedirectToAction("Index");
         }
     }
-}       
+}
+
+
+
+
