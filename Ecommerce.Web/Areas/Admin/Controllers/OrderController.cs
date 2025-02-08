@@ -96,6 +96,25 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delivered()
+        {
+            var order = await _unitOfWork.OrderHeaders.Find(u => u.Id == OrderViewModel.OrderHeader.Id);
+
+            if (order == null)
+                return NotFound();
+
+            order.OrderStatus = SD.Received;
+            order.DeliveryDate = DateTime.Now;
+
+            _unitOfWork.OrderHeaders.Update(order);
+            await _unitOfWork.Complete();
+
+            TempData["Create"] = "Order has been marked as Delivered Successfully";
+            return RedirectToAction(nameof(Details), new { id = order.Id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CancelOrder()
         {
             var order = await _unitOfWork.OrderHeaders.Find(u => u.Id == OrderViewModel.OrderHeader.Id);

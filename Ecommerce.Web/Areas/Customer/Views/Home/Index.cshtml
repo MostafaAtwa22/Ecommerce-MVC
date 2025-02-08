@@ -1,11 +1,13 @@
 ﻿@using Ecommerce.Models.ViewModels
+@using X.PagedList
+@using X.PagedList.Mvc.Core
 @model HomeViewModel
 
-@foreach (var categoryGroup in Model.ProductsByCategory)
+@foreach (var categoryGroup in Model.PaginatedCategories)
 {
     <section class="py-5">
         <div class="container">
-            <!-- Updated heading with a custom class for enhanced styling -->
+            <!-- Category Heading -->
             <h2 class="category-title fw-bold text-start">
                 @categoryGroup.Key.Name
             </h2>
@@ -18,22 +20,18 @@
                             <img class="card-img" src="@(FileSettings.ImagesPath)/Products/@product.Image" alt="@product.Name">
                             <div class="card-body">
                                 <h5>@product.Name</h5>
-                                <div class="price">$@product.Price</div>
-                                <div class="text-warning">@product.Amount Product Remain</div>
+                                <div class="price mb-2 mt-2">$@product.Price</div>
                                 @if (product.Amount > 0)
                                 {
                                     <div class="price text-success">+ In stock</div>
-                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Details", "Home", new { id = product.Id })">
-                                        View Details
-                                    </a>
                                 }
                                 else
                                 {
                                     <div class="price text-danger">- Out of stock</div>
-                                    <button disabled class="btn btn-secondary mt-auto">
-                                        Out Of Stock
-                                    </button>
                                 }
+                                <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Details", "Home", new { id = product.Id })">
+                                    View Details
+                                </a>
                             </div>
                         </div>
                     }
@@ -43,6 +41,20 @@
         </div>
     </section>
 }
+
+<div class="container my-4 d-flex justify-content-center">
+    <nav aria-label="Page navigation">
+        @Html.PagedListPager(Model.PaginatedCategories, page => Url.Action("Index", new { page }),
+                 new PagedListRenderOptions
+        {
+            LiElementClasses = new string[] { "page-item custom-page-item" },
+            PageClasses = new string[] { "page-link custom-page-link" },
+            UlElementClasses = new string[] { "pagination", "custom-pagination" },
+            ActiveLiElementClass = "active",
+        })
+    </nav>
+</div>
+
 
 
 @section BannerProducts {
@@ -61,16 +73,17 @@
     }
 }
 
+<!-- Your existing CSS styles and JavaScript remain unchanged -->
 <style>
     /* Enhanced style for the category heading */
     .category-title {
-        font-size: 2.5rem; /* Larger font size for prominence */
-        color: #333; /* Dark color for better readability */
-        border-bottom: 3px solid #eee; /* A colored bottom border for a visual accent */
-        padding-bottom: 10px; /* Space between the text and the border */
-        margin-bottom: 30px; /* Additional space below the heading */
-        text-transform: uppercase; /* Optional: transforms the text to uppercase */
-        letter-spacing: 1px; /* Optional: increases the spacing between letters */
+        font-size: 2.5rem;
+        color: #333;
+        border-bottom: 3px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     .scroll-container {
@@ -93,7 +106,6 @@
             display: none;
         }
 
-    /* Updated card styling */
     .card {
         min-width: 250px;
         max-width: 250px;
@@ -102,25 +114,23 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease-in-out;
-        height: 400px; /* Increased overall card height */
+        height: 400px;
     }
 
         .card:hover {
             transform: scale(1.05);
         }
 
-    /* Adjust the image height */
     .card-img {
         width: 100%;
-        height: 200px; /* Increased image height */
+        height: 200px;
         object-fit: cover;
     }
 
-    /* Make the card body take up the rest of the space */
     .card-body {
         padding: 15px;
         text-align: center;
-        height: calc(100% - 200px); /* Subtracting image height */
+        height: calc(100% - 200px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -157,21 +167,50 @@
         right: 10px;
     }
 
-</style>
-
-<!-- Place this script at the end of your page -->
-<script>
-    const scrollAmount = 300; // Adjust as needed
-
-    function scrollContainerLeft(button) {
-        const container = button.closest('.scroll-container').querySelector('.scroll-wrapper');
-        console.log('Left button clicked. Container:', container);
-        if (container) {
-            container.scrollLeft -= scrollAmount;
-            console.log('New scrollLeft:', container.scrollLeft);
-        }
+    .custom-pagination {
+        display: flex;
+        gap: 8px;
     }
 
+    .custom-page-item {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .custom-page-link {
+        border: 1px solid #ddd;
+        padding: 8px 16px;
+        color: black;
+        font-weight: 500;
+        background: white;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+        .custom-page-link:hover {
+            background: #f3f3f3;
+        }
+
+    .custom-page-item.active .custom-page-link {
+        background: black;
+        color: white;
+        font-weight: bold;
+    }
+
+    .custom-page-item.disabled .custom-page-link {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+</style>
+
+<script>
+    const scrollAmount = 300; // Adjust as needed
+    function scrollContainerLeft(button) {
+        const container = button.closest('.scroll-container').querySelector('.scroll-wrapper');
+        if (container) {
+            container.scrollLeft -= scrollAmount;
+        }
+    }
     function scrollContainerRight(button) {
         const container = button.closest('.scroll-container').querySelector('.scroll-wrapper');
         if (container) {

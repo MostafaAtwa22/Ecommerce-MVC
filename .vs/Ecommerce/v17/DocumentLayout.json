@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\views\\shared\\_customersorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_customersorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mcv\\projects\\ecommerce\\ecommerce.web\\views\\shared\\_customer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_customer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,6 +47,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Dashboard.cshtml",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_Dashboard.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAUwCgAAAB6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T22:18:50.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_CustomersOrder.cshtml",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_CustomersOrder.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_CustomersOrder.cshtml",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_CustomersOrder.cshtml",
+              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_CustomersOrder.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwEcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T22:16:35.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Customer.cshtml",
+              "DocumentMoniker": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "ToolTip": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_Customer.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAUwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T22:14:29.245Z",
+              "EditorCaption": ""
             }
           ]
         },

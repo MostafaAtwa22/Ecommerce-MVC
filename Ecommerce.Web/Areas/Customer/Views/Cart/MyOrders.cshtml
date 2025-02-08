@@ -1,0 +1,205 @@
+﻿@using Ecommerce.Utilities
+@model List<OrderDetails>
+
+@{
+    Layout = "_CustomersOrder";
+}
+
+@if (!Model.Any())
+{
+    <div class="container-fluid mt-100">
+        <div class="row">
+            <div class="col-md-12 mt-100">
+                <div class="card-empty">
+                    <div class="card-body card-empty">
+                        <div class="col-sm-12 empty-cart-cls text-center">
+                            <img src="~/img//deal.jpg" width="200" height="200" class="img-fluid mb-4 mr-3">
+                            <h3><strong>There is no orders</strong></h3>
+                            <h4>Buy something to make me happy :)</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    var groupedOrders = Model.GroupBy(o => o.OrderId);
+
+    @foreach (var orderGroup in groupedOrders)
+    {
+        var firstOrder = orderGroup.First();
+        var orderHeader = firstOrder.OrderHeader;
+        var orderStatus = orderHeader.OrderStatus;
+        string statusClass;
+        string statusText;
+        DateTime? displayDate;
+
+        // Update the status text and date based on the order's current status.
+        switch (orderStatus)
+        {
+            case SD.Proccessing:
+                statusClass = "badge-warning";
+                statusText = "Processing";
+                displayDate = orderHeader.OrderDate; // Show order date when processing.
+                break;
+            case SD.Shipped:
+                statusClass = "badge-info";
+                statusText = "Shipped";
+                displayDate = orderHeader.ShippingDate; // Show shipping date.
+                break;
+            case SD.Received:
+                statusClass = "badge-success";
+                statusText = "Received";
+                displayDate = orderHeader.DeliveryDate; // Show delivery date.
+                break;
+            case SD.Cancelled:
+                statusClass = "badge-danger";
+                statusText = "Cancelled";
+                displayDate = orderHeader.OrderDate; // Or use a cancellation date if available.
+                break;
+            default:
+                statusClass = "badge-secondary";
+                statusText = orderStatus;
+                displayDate = orderHeader.OrderDate;
+                break;
+        }
+
+        <div class="container mt-4">
+            <div class="order-card border rounded-lg shadow-sm p-3 mb-4 position-relative">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge @statusClass px-3 py-2">
+                        <i class="fas fa-circle mr-1"></i> @statusText
+                    </span>
+                    <small class="text-muted">
+                        @if (displayDate.HasValue)
+                        {
+                            @displayDate.Value.ToString("dd MMM yyyy")
+                        }
+                    </small>
+                </div>
+
+                <div class="order-details">
+                    <h5 class="font-weight-bold text-danger mb-3">Order ID: @orderHeader.Id</h5>
+
+                    @foreach (var detail in orderGroup)
+                    {
+                        <div class="d-flex align-items-center mb-3 position-relative">
+                            <div class="image-container">
+                                <img src="~/Images/Products/@detail.Product.Image" alt="Product Image" class="product-img rounded">
+                                <span class="quantity-badge">@detail.Quantity</span>
+                            </div>
+                            <div class="ml-3">
+                                <p class="mb-1 font-weight-bold">@detail.Product.Name</p>
+                                <span class="text-muted">$ @detail.Price</span>
+                            </div>
+                        </div>
+                        <hr />
+                    }
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="text-muted font-weight-bold">
+                        Total: $ @orderHeader.TotalPrice <span class="text-primary text-uppercase">USD</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+<style>
+    .order-card {
+        background-color: #fff;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+    .badge-success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    .badge-warning {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+
+    .badge-info {
+        background-color: #cce5ff;
+        color: #004085;
+    }
+
+    .badge-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    .badge-secondary {
+        background-color: #e2e3e5;
+        color: #41464b;
+    }
+
+    .image-container {
+        position: relative;
+        width: 90px;
+        height: 90px;
+    }
+
+    .product-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .quantity-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: #0057FF;
+        color: white;
+        font-weight: bold;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    .card-empty {
+        margin-bottom: 30px;
+        border: 0;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+        letter-spacing: .5px;
+        border-radius: 8px;
+    }
+
+        .card-empty .card-header {
+            background-color: #fff;
+            border-bottom: none;
+            padding: 24px;
+            border-bottom: 1px solid #f6f7fb;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+    .card-header:first-child {
+        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    }
+
+
+    .card-empty .card-body {
+        padding: 30px;
+        background-color: transparent;
+    }
+
+</style>

@@ -160,6 +160,10 @@
 						{
 							<input type="submit" asp-action="StartShip" onclick="return CheckData()" class="btn btn-success" value="Start Shipping" />
 						}
+						@if(Model.OrderHeader.OrderStatus == SD.Shipped)
+						{
+							<input type="submit" asp-action="Delivered" class="btn btn-success" value="Deliver Order" />
+						}
 						@if (Model.OrderHeader.OrderStatus != SD.Cancelled || Model.OrderHeader.OrderStatus != SD.Refund)
 						{
 							<input type="submit" class="btn btn-danger" asp-action="CancelOrder" value="Cancel Order" />

@@ -1,6 +1,5 @@
 ﻿using Ecommerce.Entities.Settings;
 using Ecommerce.Entities.ViewModels.Products;
-using Stripe.V2;
 
 namespace Ecommerce.Web.Areas.Admin.Controllers
 {
@@ -38,6 +37,7 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
                 Name = p.Name,
                 Category = p.Category?.Name,
                 Price = p.Price,
+                Amount = p.Amount,
                 Image = p.Image,
             }).ToList();
 

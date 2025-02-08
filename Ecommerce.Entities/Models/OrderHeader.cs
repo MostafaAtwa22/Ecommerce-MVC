@@ -13,6 +13,8 @@ namespace Ecommerce.Entities.Models
 
         public DateTime ShippingDate { get; set; }
 
+        public DateTime DeliveryDate { get; set; }
+
         public decimal TotalPrice { get; set; }
 
         public string? OrderStatus { get; set; }

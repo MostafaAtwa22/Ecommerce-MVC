@@ -13,7 +13,14 @@
                 <div class="card shadow-lg d-flex flex-row overflow-hidden rounded-4">
                     <!-- Unified container -->
                     <div class="p-4 flex-fill" style="width: 50%;">
-                        <h3 class="text-primary mb-4">Sign Up</h3>
+                        @if (User.IsInRole(SD.AdminRole))
+                        {
+                            <h3 class="text-primary mb-4">Add new user</h3>
+                        }
+                        else
+                        { 
+                            <h3 class="text-primary mb-4">Sign Up</h3>
+                        }
 
                         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                             <div class="form-floating mb-3">
@@ -70,9 +77,12 @@
                                     <label for="roleSelect"><i class="bi bi-person-badge"></i> Role</label>
                                 </div>
                             }
-                            <div class="text-center mb-3">
-                                <p>Already have an account? <a href="/Identity/Account/Login" class="text-primary">Login</a></p>
-                            </div>
+                            @if(!User.IsInRole(SD.AdminRole))
+                            {
+                                <div class="text-center mb-3">
+                                    <p>Already have an account? <a href="/Identity/Account/Login" class="text-primary">Login</a></p>
+                                </div>
+                            }
 
                             <button id="registerSubmit" type="submit" class="btn btn-primary w-100">
                                 @(User.IsInRole(SD.AdminRole) ? "Add User" : "Register")

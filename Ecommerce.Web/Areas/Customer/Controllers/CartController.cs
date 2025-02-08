@@ -1,5 +1,4 @@
-﻿using Ecommerce.DataAccess.Migrations;
-using Ecommerce.Entities.ViewModels.Customer;
+﻿using Ecommerce.Entities.ViewModels.Customer;
 using Ecommerce.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Stripe.Checkout;
@@ -12,7 +11,7 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
     public class CartController : Controller
     {
 		private readonly IUnitOfWork _unitOfWork;
-		public ShoppingCartVM ShoppingCartVM { get; set; }
+        private ShoppingCartVM ShoppingCartVM { get; set; }
 
 		public CartController(IUnitOfWork unitOfWork)
 		{
@@ -174,8 +173,27 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
             await _unitOfWork.Complete();
 
             HttpContext.Session.SetInt32(SD.SessionKey, 0);
-
             return View(id);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> MyOrders()
+        {
+            var claimIdentity = User.Identity as ClaimsIdentity;
+            var claim = claimIdentity?.FindFirst(ClaimTypes.NameIdentifier);
+
+            if (claim == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var orderDetails = await _unitOfWork.OrderDetails
+                .GetAll(o => o.OrderHeader.ApplicationUserId == claim.Value, 
+                includes: new[] { "Product", "OrderHeader" });
+
+            var detail = orderDetails.OrderBy(o => o.OrderHeader.OrderDate).ToList();
+
+            return View(detail);
         }
 
         [HttpGet]

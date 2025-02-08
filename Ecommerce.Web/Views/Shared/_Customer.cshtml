@@ -54,27 +54,36 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/Customer/Home/Index">Home</a>
+                        <a class="nav-link active" href="/Customer/Home/Index">
+                            <i class="bi bi-house-fill"></i> Home
+                        </a>
                     </li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole(SD.AdminRole))
                         {
                             <li class="nav-item">
-                                <a class="nav-link active" href="/Admin/Dashboard/Index">Dashboard</a>
+                                <a class="nav-link active" href="/Admin/Dashboard/Index">
+                                    <i class="bi bi-speedometer2"></i> Dashboard
+                                </a>
                             </li>
                         }
                         else if (User.IsInRole(SD.CustomerRole))
                         {
                             <li class="nav-item">
-                                <a class="nav-link active" href="/Customer/Cart/Index">My Orders</a>
+                                <a class="nav-link active" href="/Customer/Cart/MyOrders">
+                                    <i class="bi bi-bag-check-fill"></i> My Orders
+                                </a>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link active" href="/Identity/Account/Manage">My settings</a>
+                            <a class="nav-link active" href="/Identity/Account/Manage">
+                                <i class="bi bi-gear-fill"></i> My settings
+                            </a>
                         </li>
                     }
                 </ul>
+
                 <partial name="_LoginPartial" />
                 @if (User.Identity.IsAuthenticated && User.IsInRole(SD.CustomerRole))
                 {

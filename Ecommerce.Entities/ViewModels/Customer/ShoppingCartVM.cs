@@ -7,4 +7,9 @@ namespace Ecommerce.Entities.ViewModels.Customer
         public IEnumerable<ShoppingCart> CartList { get; set; } = new List<ShoppingCart>();
         public OrderHeader OrderHeader { get; set; } = default!;
     }
+
+    public class OrderCartVM
+    {
+
+    }
 }

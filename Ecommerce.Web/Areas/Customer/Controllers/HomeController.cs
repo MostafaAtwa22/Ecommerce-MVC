@@ -3,6 +3,7 @@ using Ecommerce.Models.ViewModels;
 using Ecommerce.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using X.PagedList.Extensions;
 
 namespace Ecommerce.Web.Areas.Customer.Controllers
 {
@@ -15,10 +16,12 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
+            int pageNumber = page ?? 1;
+            int pageSize = 2; 
+
             var products = await _unitOfWork.Products.GetAll(includes: new[] { "Category" });
 
             var productsByCategory = products
@@ -28,11 +31,18 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
                     g => g.ToList()
                 );
 
-            var latestProducts = products.OrderByDescending(p => p.TimeCreation).Take(5).ToList();
+            var categoriesList = productsByCategory.ToList();
+
+            var paginatedCategories = categoriesList.ToPagedList(pageNumber, pageSize);
+
+            var latestProducts = products
+                .OrderByDescending(p => p.TimeCreation)
+                .Take(5)
+                .ToList();
 
             var model = new HomeViewModel
             {
-                ProductsByCategory = productsByCategory,
+                PaginatedCategories = paginatedCategories,
                 BannerProducts = latestProducts
             };
 

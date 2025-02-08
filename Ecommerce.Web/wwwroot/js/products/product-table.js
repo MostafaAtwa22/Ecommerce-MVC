@@ -12,6 +12,7 @@
                 { data: "name", className: "text-center" },
                 { data: "category", className: "text-center" },
                 { data: "price", className: "text-center" },
+                { data: "amount", className: "text-center" },
                 {
                     data: "image",
                     className: "text-center",
