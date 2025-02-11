@@ -34,10 +34,18 @@ The application is structured following **Tri-Arch (Three Layer Architecture)**:
 - **Bootstrap & jQuery**
 - **AJAX for Cart Operations**
 - **Session Management**
+- **Repository Desing Pattern**
+- **Solid Prancibales**
+- **Dependancy Injection**
 
 ## 🚀 Getting Started
 ### Prerequisites
 - .NET 8+
 - SQL Server
+- EF Core
+- LINQ
+- Csharp
+- Solid
+
 
 
