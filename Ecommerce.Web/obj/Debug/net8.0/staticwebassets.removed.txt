@@ -1,0 +1,4 @@
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\wwwroot\Images\Products\074db4ff-f99c-4690-82f3-55b03055e277.jpg
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\wwwroot\Images\Products\3f086bb4-7c78-498a-ba1e-bdae5847cfff.jpeg
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\wwwroot\Images\Products\7f0a8ca4-22b3-4cdf-aefe-2d18a940a5ac.jpg
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Web\wwwroot\Images\Products\8c5feb08-32bb-41e4-b6f8-858edfd06926.jpg

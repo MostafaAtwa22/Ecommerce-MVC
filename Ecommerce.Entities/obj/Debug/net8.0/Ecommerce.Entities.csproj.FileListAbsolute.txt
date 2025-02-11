@@ -1,13 +1,13 @@
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\bin\Debug\net8.0\Ecommerce.Entities.deps.json
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\bin\Debug\net8.0\Ecommerce.Entities.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\bin\Debug\net8.0\Ecommerce.Entities.pdb
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.csproj.AssemblyReference.cache
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.GeneratedMSBuildEditorConfig.editorconfig
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.AssemblyInfoInputs.cache
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.AssemblyInfo.cs
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.csproj.CoreCompileInputs.cache
+D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.sourcelink.json
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\refint\Ecommerce.Entities.dll
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.pdb
 D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\ref\Ecommerce.Entities.dll
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.csproj.AssemblyReference.cache
-D:\programming\Backend\MCV\Projects\Ecommerce\Ecommerce.Entities\obj\Debug\net8.0\Ecommerce.Entities.sourcelink.json

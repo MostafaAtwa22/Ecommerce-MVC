@@ -1,4 +1,5 @@
 using Ecommerce.Utilities;
+using Ecommerce.Web.helper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Stripe;
@@ -32,6 +33,7 @@ namespace Ecommerce.Web
                             .AddDefaultUI()
                             .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            builder.Services.AddAutoMapper(typeof(MappingProfiles));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddSingleton<IEmailSender, EmailSender>();
 

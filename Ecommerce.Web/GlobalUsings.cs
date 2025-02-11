@@ -6,3 +6,4 @@ global using Ecommerce.DataAccess.Repositories;
 global using Ecommerce.Entities.Interfaces;
 global using Ecommerce.Entities.Models;
 global using Ecommerce.Entities.ViewModels.Categories;
+global using AutoMapper;

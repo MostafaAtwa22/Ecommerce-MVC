@@ -1,13 +1,18 @@
-﻿namespace Ecommerce.Web.Areas.Admin.Controllers
+﻿using AutoMapper;
+
+namespace Ecommerce.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class CategoriesController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public CategoriesController(IUnitOfWork unitOfWork)
+        public CategoriesController(IUnitOfWork unitOfWork, 
+            IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -43,17 +48,12 @@
                 return View(model);
             }
 
-            var category = new Category
-            {
-                Name = model.Name,
-                Description = model.Description,
-                CreatedTime = DateTime.Now,
-            };
+            var category = _mapper.Map<Category>(model);
 
             _unitOfWork.Categories.Create(category);
             await _unitOfWork.Complete();
 
-            TempData["Create"] = "Data has been Created Succesfully";
+            TempData["Create"] = "Data has been Created Successfully";
 
             return RedirectToAction(nameof(Index));
         }
@@ -64,12 +64,7 @@
             var category = await _unitOfWork.Categories
                 .Find(c => c.Id == id);
 
-            var categoryVM = new EditCategoryVM
-            {
-                Id = id,
-                Name = category.Name, 
-                Description = category.Description,
-            };
+            var categoryVM = _mapper.Map<EditCategoryVM>(category);
             return View(categoryVM);
         }
 
@@ -82,18 +77,12 @@
                 return View(model);
             }
 
-            var category = new Category
-            {
-                Id = model.Id,
-                Name = model.Name,
-                Description= model.Description,
-                CreatedTime = DateTime.Now,
-            };
+            var category = _mapper.Map<Category>(model);
 
             _unitOfWork.Categories.Update(category);
             await _unitOfWork.Complete();
 
-            TempData["Edit"] = "Data has been Updated Succesfully";
+            TempData["Edit"] = "Data has been Updated Successfully";
             return RedirectToAction(nameof(Index));
         }
 

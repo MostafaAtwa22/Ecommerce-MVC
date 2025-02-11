@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 08 Feb 2025 21:54:44 GMT"
+          "Value": "Tue, 11 Feb 2025 11:03:58 GMT"
         }
       ],
       "EndpointProperties": [
@@ -74,7 +74,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 08 Feb 2025 21:54:44 GMT"
+          "Value": "Tue, 11 Feb 2025 11:03:58 GMT"
         }
       ],
       "EndpointProperties": [
@@ -987,6 +987,88 @@
       ]
     },
     {
+      "Route": "Images/Products/7f0a8ca4-22b3-4cdf-aefe-2d18a940a5ac.4y1tyrjm8x.jpg",
+      "AssetFile": "Images/Products/7f0a8ca4-22b3-4cdf-aefe-2d18a940a5ac.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "65775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HA3/ApZyBb0ohyKJ0dn/Db850le1WZqaWUztxaQUUqk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 07:13:44 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4y1tyrjm8x"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HA3/ApZyBb0ohyKJ0dn/Db850le1WZqaWUztxaQUUqk="
+        },
+        {
+          "Name": "label",
+          "Value": "Images/Products/7f0a8ca4-22b3-4cdf-aefe-2d18a940a5ac.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "Images/Products/7f0a8ca4-22b3-4cdf-aefe-2d18a940a5ac.jpg",
+      "AssetFile": "Images/Products/7f0a8ca4-22b3-4cdf-aefe-2d18a940a5ac.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "65775"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HA3/ApZyBb0ohyKJ0dn/Db850le1WZqaWUztxaQUUqk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Feb 2025 07:13:44 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HA3/ApZyBb0ohyKJ0dn/Db850le1WZqaWUztxaQUUqk="
+        }
+      ]
+    },
+    {
       "Route": "Images/Products/875c69c4-92d9-4c35-90cf-753e81de1869.1668cjp3db.jpg",
       "AssetFile": "Images/Products/875c69c4-92d9-4c35-90cf-753e81de1869.jpg",
       "Selectors": [],
@@ -1069,8 +1151,8 @@
       ]
     },
     {
-      "Route": "Images/Products/d62a9089-9b74-408c-ad14-c10622b3e18d.4y1tyrjm8x.jpg",
-      "AssetFile": "Images/Products/d62a9089-9b74-408c-ad14-c10622b3e18d.jpg",
+      "Route": "Images/Products/8c5feb08-32bb-41e4-b6f8-858edfd06926.4y1tyrjm8x.jpg",
+      "AssetFile": "Images/Products/8c5feb08-32bb-41e4-b6f8-858edfd06926.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1095,7 +1177,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 05 Feb 2025 13:14:25 GMT"
+          "Value": "Tue, 11 Feb 2025 11:09:25 GMT"
         }
       ],
       "EndpointProperties": [
@@ -1109,13 +1191,13 @@
         },
         {
           "Name": "label",
-          "Value": "Images/Products/d62a9089-9b74-408c-ad14-c10622b3e18d.jpg"
+          "Value": "Images/Products/8c5feb08-32bb-41e4-b6f8-858edfd06926.jpg"
         }
       ]
     },
     {
-      "Route": "Images/Products/d62a9089-9b74-408c-ad14-c10622b3e18d.jpg",
-      "AssetFile": "Images/Products/d62a9089-9b74-408c-ad14-c10622b3e18d.jpg",
+      "Route": "Images/Products/8c5feb08-32bb-41e4-b6f8-858edfd06926.jpg",
+      "AssetFile": "Images/Products/8c5feb08-32bb-41e4-b6f8-858edfd06926.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1140,7 +1222,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 05 Feb 2025 13:14:25 GMT"
+          "Value": "Tue, 11 Feb 2025 11:09:25 GMT"
         }
       ],
       "EndpointProperties": [

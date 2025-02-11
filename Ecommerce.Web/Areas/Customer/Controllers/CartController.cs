@@ -10,15 +10,15 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
     [Area("Customer")]
     public class CartController : Controller
     {
-		private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private ShoppingCartVM ShoppingCartVM { get; set; }
 
-		public CartController(IUnitOfWork unitOfWork)
-		{
-			_unitOfWork = unitOfWork;
-		}
+        public CartController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
-		public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             var claimIdentity = (ClaimsIdentity)User.Identity!;
             var claim = claimIdentity.FindFirst(ClaimTypes.NameIdentifier);
@@ -26,7 +26,7 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
             ShoppingCartVM = new ShoppingCartVM
             {
                 CartList = await _unitOfWork.ShoppingCarts
-                .GetAll(u => u.ApplicationUserId == claim!.Value, 
+                .GetAll(u => u.ApplicationUserId == claim!.Value,
                 includes: new[] { "Product" }),
                 OrderHeader = new()
             };
@@ -47,7 +47,7 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
                 CartList = await _unitOfWork.ShoppingCarts
                 .GetAll(u => u.ApplicationUserId == claim!.Value,
                 includes: new[] { "Product" }),
-                OrderHeader = new ()
+                OrderHeader = new()
             };
 
             ShoppingCartVM.OrderHeader.ApplicationUser = await _unitOfWork.ApplicationUsers
@@ -188,7 +188,7 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
             }
 
             var orderDetails = await _unitOfWork.OrderDetails
-                .GetAll(o => o.OrderHeader.ApplicationUserId == claim.Value, 
+                .GetAll(o => o.OrderHeader.ApplicationUserId == claim.Value,
                 includes: new[] { "Product", "OrderHeader" });
 
             var detail = orderDetails.OrderBy(o => o.OrderHeader.OrderDate).ToList();
@@ -221,7 +221,7 @@ namespace Ecommerce.Web.Areas.Customer.Controllers
                 return NotFound();
 
             if (cart.Count <= 1)
-            { 
+            {
                 _unitOfWork.ShoppingCarts.Delete(cart);
                 var count = await _unitOfWork.ShoppingCarts
                     .GetAll(x => x.ApplicationUserId == cart.ApplicationUserId);

@@ -8,13 +8,16 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IMapper _mapper;
         private readonly string _imagesPath;
 
         public ProductsController(IUnitOfWork unitOfWork, 
-            IWebHostEnvironment webHostEnvironment)
+            IWebHostEnvironment webHostEnvironment,
+            IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
+            _mapper = mapper;
             _imagesPath = $"{_webHostEnvironment.WebRootPath}{FileSettings.ImagesPath}/Products";
         }
 
@@ -77,16 +80,9 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
 
             var imageName = await SaveImage(model.Image);
 
-            Product product = new Product
-            {
-                Name = model.Name,
-                CategoryId = model.CategoryId,
-                Image = imageName,
-                Description = model.Description,
-                Price = model.Price,
-                Amount = model.Quantity
-            };
-
+            Product product = _mapper.Map<Product>(model);
+            product.Image = imageName;
+                
             _unitOfWork.Products.Create(product);
             var effectedRows = await _unitOfWork.Complete();
             if (effectedRows > 0)
@@ -104,17 +100,8 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
             if (product is null)
                 return NotFound();
 
-            EditProductVM productVM = new EditProductVM
-            {
-                Id = product.Id,
-                Name = product.Name,
-                CategoryId = product.CategoryId,
-                Description = product.Description,
-                Price = product.Price,
-                CategoriesList = await _unitOfWork.Categories.GetSelectList(),
-                CurrentImage = product.Image,
-                Quantity = product.Amount
-            };
+            EditProductVM productVM = _mapper.Map<EditProductVM>(product);
+            productVM.CategoriesList = await _unitOfWork.Categories.GetSelectList();
             return View(productVM);
         }
 
@@ -128,7 +115,7 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
                 return View(model);
             }
 
-            var product = await _unitOfWork.Products.FindWithTrack(p => p.Id ==  model.Id);
+            var product = await _unitOfWork.Products.FindWithTrack(p => p.Id == model.Id);
 
             if (product is null)
                 return NotFound();
@@ -136,13 +123,7 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
             var hasNewImage = model.Image is not null;
             var oldImage = product.Image;
 
-            product.Id = model.Id;
-            product.Name = model.Name;
-            product.CategoryId = model.CategoryId;
-            product.Description = model.Description;
-            product.Price = model.Price;
-            product.Amount = model.Quantity;
-
+            _mapper.Map(model, product);
 
             if (hasNewImage)
                 product.Image = await SaveImage(model.Image!);
