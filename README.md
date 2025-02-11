@@ -16,8 +16,9 @@ The application is structured following **Tri-Arch (Three Layer Architecture)**:
 ✅ **Order Management (Processing, Shipped, Delivered, Cancelled)**  
 ✅ **Session & Cookies for Cart Handling**  
 ✅ **Dynamic Order Status Updates**  
-✅ **Product Management (CRUD Operations)**  
-✅ **Clean & Maintainable Code**  
+✅ **Product & Category Management (CRUD Operations)**  
+✅ **Clean & Maintainable Code**
+✅ **Auto Mapper**
 
 
 ## 🔐 Authentication & Authorization
