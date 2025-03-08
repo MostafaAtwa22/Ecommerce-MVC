@@ -443,6 +443,10 @@ namespace Ecommerce.DataAccess.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<byte[]>("ProfilePicture")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 

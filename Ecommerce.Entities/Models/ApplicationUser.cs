@@ -15,5 +15,7 @@ namespace Ecommerce.Entities.Models
         [Required]
         [MaxLength(100)]
         public string City { get; set; } = string.Empty;
+
+        public byte[] ProfilePicture { get; set; } = default!;
     }
 }

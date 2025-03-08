@@ -9780,11 +9780,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj",
+      "projectUniqueName": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj",
       "projectName": "Ecommerce.DataAccess",
-      "projectPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj",
+      "projectPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj",
       "packagesPath": "C:\\Users\\atwam\\.nuget\\packages\\",
-      "outputPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\obj\\",
+      "outputPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9805,8 +9805,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Entities\\Ecommerce.Entities.csproj": {
-              "projectPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Entities\\Ecommerce.Entities.csproj"
+            "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Entities\\Ecommerce.Entities.csproj": {
+              "projectPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Entities\\Ecommerce.Entities.csproj"
             }
           }
         }
@@ -9821,7 +9821,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -9862,7 +9862,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

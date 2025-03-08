@@ -13907,11 +13907,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Ecommerce.Web.csproj",
+      "projectUniqueName": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Ecommerce.Web.csproj",
       "projectName": "Ecommerce.Web",
-      "projectPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\Ecommerce.Web.csproj",
+      "projectPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Ecommerce.Web.csproj",
       "packagesPath": "C:\\Users\\atwam\\.nuget\\packages\\",
-      "outputPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Web\\obj\\",
+      "outputPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -13932,11 +13932,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj": {
-              "projectPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj"
+            "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj": {
+              "projectPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.DataAccess\\Ecommerce.DataAccess.csproj"
             },
-            "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Utilities\\Ecommerce.Utilities.csproj": {
-              "projectPath": "D:\\programming\\Backend\\MCV\\Projects\\Ecommerce\\Ecommerce.Utilities\\Ecommerce.Utilities.csproj"
+            "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Utilities\\Ecommerce.Utilities.csproj": {
+              "projectPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Utilities\\Ecommerce.Utilities.csproj"
             }
           }
         }
@@ -13951,7 +13951,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -14025,7 +14025,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

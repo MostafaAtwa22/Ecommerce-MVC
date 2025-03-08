@@ -25,13 +25,14 @@ namespace Ecommerce.Web
             });
 
             builder.Services.Configure<StripeConfig>(builder.Configuration.GetSection("Stripe"));
-            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
                             {
                                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromDays(1);
                             })
-                            .AddDefaultTokenProviders()
-                            .AddDefaultUI()
-                            .AddEntityFrameworkStores<ApplicationDbContext>();
+                           .AddEntityFrameworkStores<ApplicationDbContext>()
+                           .AddUserManager<UserManager<ApplicationUser>>() // Explicitly add UserManager
+                           .AddDefaultTokenProviders()
+                           .AddDefaultUI();
 
             builder.Services.AddAutoMapper(typeof(MappingProfiles));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

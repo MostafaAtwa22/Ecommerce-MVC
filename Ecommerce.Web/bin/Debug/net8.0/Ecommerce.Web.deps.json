@@ -3670,7 +3670,7 @@
         },
         "runtime": {
           "Ecommerce.DataAccess.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         },
@@ -3686,7 +3686,7 @@
         },
         "runtime": {
           "Ecommerce.Entities.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         },
@@ -3700,7 +3700,7 @@
         },
         "runtime": {
           "Ecommerce.Utilities.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         },
