@@ -9,18 +9,12 @@
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-md-10">
-                <!-- Adjust width -->
                 <div class="card shadow-lg d-flex flex-row overflow-hidden rounded-4">
-                    <!-- Unified container -->
+                    <!-- Left Section: Form -->
                     <div class="p-4 flex-fill" style="width: 50%;">
-                        @if (User.IsInRole(SD.AdminRole))
-                        {
-                            <h3 class="text-primary mb-4">Add new user</h3>
-                        }
-                        else
-                        { 
-                            <h3 class="text-primary mb-4">Sign Up</h3>
-                        }
+                        <h3 class="text-primary mb-4">
+                            @(User.IsInRole(SD.AdminRole) ? "Add New User" : "Sign Up")
+                        </h3>
 
                         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                             <div class="form-floating mb-3">
@@ -48,19 +42,19 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="+20" aria-required="true" placeholder="Phone Number" />
+                                <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="tel" aria-required="true" placeholder="Phone Number" />
                                 <label asp-for="Input.PhoneNumber"><i class="bi bi-phone"></i> Phone Number</label>
                                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Password" />
+                                <input asp-for="Input.Password" type="password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Password" />
                                 <label asp-for="Input.Password"><i class="bi bi-lock"></i> Password</label>
                                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Confirm Password" />
+                                <input asp-for="Input.ConfirmPassword" type="password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="Confirm Password" />
                                 <label asp-for="Input.ConfirmPassword"><i class="bi bi-lock-fill"></i> Confirm Password</label>
                                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                             </div>
@@ -77,7 +71,8 @@
                                     <label for="roleSelect"><i class="bi bi-person-badge"></i> Role</label>
                                 </div>
                             }
-                            @if(!User.IsInRole(SD.AdminRole))
+
+                            @if (!User.IsInRole(SD.AdminRole))
                             {
                                 <div class="text-center mb-3">
                                     <p>Already have an account? <a href="/Identity/Account/Login" class="text-primary">Login</a></p>
@@ -87,8 +82,24 @@
                             <button id="registerSubmit" type="submit" class="btn btn-primary w-100">
                                 @(User.IsInRole(SD.AdminRole) ? "Add User" : "Register")
                             </button>
+
+                            <!-- External Login Buttons -->
+                            @if (Model.ExternalLogins?.Count > 0)
+                            {
+                                <div class="text-center mt-3">
+                                    <p>Or sign up using:</p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-secondary me-2" name="provider" value="@provider.Name" title="Log in using @provider.DisplayName">
+                                            @provider.DisplayName
+                                        </button>
+                                    }
+                                </div>
+                            }
                         </form>
                     </div>
+
+                    <!-- Right Section: Image -->
                     <div class="w-50">
                         <img src="~/img/ecommerce.jpg" class="img-fluid h-100 w-100" alt="Welcome Image">
                     </div>
@@ -98,16 +109,14 @@
     </div>
 </div>
 
-
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
 
 <style>
     body {
-        background: linear-gradient(to right, #eef2f3, #8EC5FC); /* Background color to match login */
+        background: linear-gradient(to right, #eef2f3, #8EC5FC); /* Background color */
     }
-    
 
     .btn-warning {
         background-color: #ff6600; /* Button color */
@@ -120,7 +129,7 @@
     }
 
     .card {
-        border-radius: 1rem; /* Apply rounded corners to the whole container */
+        border-radius: 1rem; /* Apply rounded corners */
     }
 
     img {
@@ -132,6 +141,6 @@
 
     .rounded-end {
         border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem; /* Adjusting image radius */
+        border-bottom-right-radius: 1rem; /* Adjust image radius */
     }
 </style>

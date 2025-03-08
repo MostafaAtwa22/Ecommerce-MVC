@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mvc projects\\ecommerce\\ecommerce.web\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mvc projects\\ecommerce\\ecommerce.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mvc projects\\ecommerce\\ecommerce.web\\areas\\identity\\pages\\account\\manage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\areas\\identity\\pages\\account\\manage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mvc projects\\ecommerce\\ecommerce.web\\areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mvc projects\\ecommerce\\ecommerce.web\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mvc projects\\ecommerce\\ecommerce.web\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|solutionrelative:ecommerce.web\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28E5A07D-3F83-4AA0-9D32-D91B72CD0612}|Ecommerce.Web\\Ecommerce.Web.csproj|d:\\programming\\backend\\mvc projects\\ecommerce\\ecommerce.web\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,64 +50,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.Web\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "Ecommerce.Web\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-04T22:36:48.452Z",
+              "DocumentIndex": 1,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Services\\EmailSender.cs",
+              "ToolTip": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Services\\EmailSender.cs",
+              "RelativeToolTip": "Ecommerce.Web\\Services\\EmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T20:06:20.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "RelativeDocumentMoniker": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "ToolTip": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "RelativeToolTip": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-04T22:11:35.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
-              "ToolTip": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
-              "RelativeToolTip": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAcwJUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T22:07:58.534Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "ToolTip": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeToolTip": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAQwJIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-03T23:28:26.248Z"
+              "WhenOpened": "2025-03-08T19:58:22.712Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "Ecommerce.Web\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAkwIIAAAANAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Program.cs",
+              "RelativeDocumentMoniker": "Ecommerce.Web\\Program.cs",
+              "ToolTip": "D:\\programming\\Backend\\MVC Projects\\Ecommerce\\Ecommerce.Web\\Program.cs",
+              "RelativeToolTip": "Ecommerce.Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T23:28:11.221Z"
+              "WhenOpened": "2025-03-08T19:55:04.193Z",
+              "EditorCaption": ""
             }
           ]
         },

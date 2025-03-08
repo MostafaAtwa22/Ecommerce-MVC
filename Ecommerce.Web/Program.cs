@@ -27,6 +27,7 @@ namespace Ecommerce.Web
             builder.Services.Configure<StripeConfig>(builder.Configuration.GetSection("Stripe"));
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
                             {
+                                options.SignIn.RequireConfirmedAccount = true;
                                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromDays(1);
                             })
                            .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -34,6 +35,7 @@ namespace Ecommerce.Web
                            .AddDefaultTokenProviders()
                            .AddDefaultUI();
 
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
             builder.Services.AddAutoMapper(typeof(MappingProfiles));
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddSingleton<IEmailSender, EmailSender>();
