@@ -1,18 +1,18 @@
 # 🛒 E-Commerce Web Application
 
 ## 📌 Overview
-This is a modern **E-Commerce Web Application** built using **ASP.NET Core MVC**. The project follows the **Tri-Architecture Pattern (Presentation, Application, Infrastructure)** and adheres to **Clean Code** principles.
+This is a modern **E-Commerce Web Application** built using **ASP.NET Core MVC**. The project follows the **Three-Layer Architecture** (Presentation, Application, Infrastructure) and adheres to **Clean Code** principles.
 
 ## 🏗️ Architecture
-The application is structured following **Three Layer Architecture**:
-- **Presentation Layer**: Handles the UI and user interactions.
+The application is structured using **Three Layer Architecture**:
+- **Presentation Layer**: Handles UI and user interactions.
 - **Application Layer**: Business logic, services, and use cases.
 - **Infrastructure Layer**: Database access, external APIs, and authentication.
 
 ## 🔑 Features
 ✅ **Admin & Customer Areas**  
-✅ **Authentication & Authorization (Identity & Roles)**
-✅ **Secure Payments with Stripe Integration** 💳
+✅ **Authentication & Authorization (Identity & Roles)**  
+✅ **Secure Payments with Stripe Integration** 💳  
 ✅ **Shopping Cart with AJAX**  
 ✅ **Order Management (Processing, Shipped, Delivered, Cancelled)**  
 ✅ **Session & Cookies for Cart Handling**  
@@ -31,12 +31,13 @@ The application is structured following **Three Layer Architecture**:
 - **ASP.NET Core MVC**
 - **Entity Framework Core**
 - **SQL Server**
-- **Bootstrap & jQuery**
+- **Bootstrap**
 - **AJAX for Cart Operations**
 - **Session Management**
 - **Repository Design Pattern**
 - **SOLID Principles**
 - **Dependency Injection**
+- **Stripe for Payment Processing**
 
 ## 🚀 Getting Started
 
