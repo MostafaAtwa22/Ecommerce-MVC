@@ -11,7 +11,8 @@ The application is structured following **Three Layer Architecture**:
 
 ## 🔑 Features
 ✅ **Admin & Customer Areas**  
-✅ **Authentication & Authorization (Identity & Roles)**  
+✅ **Authentication & Authorization (Identity & Roles)**
+✅ **Secure Payments with Stripe Integration** 💳
 ✅ **Shopping Cart with AJAX**  
 ✅ **Order Management (Processing, Shipped, Delivered, Cancelled)**  
 ✅ **Session & Cookies for Cart Handling**  
